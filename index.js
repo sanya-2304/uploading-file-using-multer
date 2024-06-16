@@ -2,9 +2,10 @@ const path=require('path')
 const express=require('express')
 const mongoose=require('mongoose')
 const multer=require('multer')
+require('dotenv').config();
 
 const app=express();
-const PORT=1800;
+const PORT=process.env.PORT || 1800;
 
 // const upload=multer({dest: "upload/"})
 const storage=multer.diskStorage({destination:function(req, file, cb){
